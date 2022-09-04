@@ -5,7 +5,7 @@ import {AnimatePresence} from "framer-motion" ;
 
 const App = () => {
   return (
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
     <div className="w-screen h-auto flex flex-col bg-slate-200">
         <Header />
         <main className=' mt-28 p-8 w-full'>
