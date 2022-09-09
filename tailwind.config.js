@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width:{
+        190: "190px",
+      },
       height:{
         80: "80px",
         150: "150px",
@@ -37,6 +40,8 @@ module.exports = {
         textColor: "#515151",
         cartNumBg: "#e80013",
         primary: "#f5f3f3",
+        cardOverlay : 'rgba(256,256,256,0.4)',
+        lighttextGray : '#9ca0ab',
       }
     },
   },
