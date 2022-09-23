@@ -76,7 +76,7 @@ const Header = () => {
                     isMenu && (
                         <motion.div initial={{opacity: 0, scale: 0.6}} animate={{opacity: 1, scale: 1}} exit={{opacity: 0, scale: 0.6}} className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-11 right-0'>
                         {
-                        user && (user.email === "co1805630149@gmail.com" || user.email === "udaybharadwa2002@gmail.com") && (
+                        user && (user.email === "udaybharadwa2002@gmail.com" || user.email === "masterweapon2302@gmail.com") && (
                             <Link to={"/createItem"}>
                                 <p className='px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base'
                                 onClick={() => setisMenu(false)}
