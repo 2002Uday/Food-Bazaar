@@ -1,8 +1,10 @@
-    import React, { useState } from 'react'
-    import { motion } from 'framer-motion';
-    import { MdFastfood,MdCloudUpload, MdDelete , MdFoodBank, MdAttachMoney } from 'react-icons/md';
+import React, { useState } from 'react'
+import { motion } from 'framer-motion';
+import { MdFastfood,MdCloudUpload, MdDelete , MdFoodBank, MdAttachMoney } from 'react-icons/md';
 import { categories } from '../utils/data';
 import Loader from './Loader';
+import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { storage } from '../firebase.config';
 
     const CreateContainer = () => {
 
@@ -16,8 +18,60 @@ import Loader from './Loader';
       const [msg, setMsg] = useState(null);
       const [isLoading, setIsLoading] = useState(false);
 
-      const uploadImage = () => {}
-      const deleteImage = () => {}
+      const uploadImage = (e) => {
+        setIsLoading(true);
+        const imageFile = e.target.files[0];
+        const storageRef = ref(storage, `Images/${Date.now()}-${imageFile.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, imageFile);
+    
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const uploadProgress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          },
+          (error) => {
+            console.log(error);
+            setFields(true);
+            setMsg("Error while uploading : Try AGain 🙇");
+            setAlertStatus("danger");
+            setTimeout(() => {
+              setFields(false);
+              setIsLoading(false);
+            }, 4000);
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+              setImageAsset(downloadURL);
+              setIsLoading(false);
+              setFields(true);
+              setMsg("Image uploaded successfully 😊");
+              setAlertStatus("success");
+              setTimeout(() => {
+                setFields(false);
+              }, 4000);
+            });
+          }
+        );
+      };
+
+
+      const deleteImage = () => {
+        setIsLoading(true);
+        const deleteRef = ref(storage, imageAsset);
+        deleteObject(deleteRef).then(() => {
+          setImageAsset(null);
+          setIsLoading(false);
+          setFields(true);
+          setMsg("Image deleted successfully 😊");
+          setAlertStatus("success");
+          setTimeout(() => {
+            setFields(false);
+          }, 4000);
+        });
+      };
+
+
       const saveDetails = () => {}
       
       return (
