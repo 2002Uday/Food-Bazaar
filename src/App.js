@@ -6,7 +6,7 @@ import {AnimatePresence} from "framer-motion" ;
 const App = () => {
   return (
     <AnimatePresence exitBeforeEnter>
-    <div className="w-screen h-auto flex flex-col bg-slate-200">
+    <div className="w-screen h-auto flex flex-col bg-slate-100">
         <Header />
         <main className=' mt-16 md:mt-20 px-4 md:px-14 py-4 w-full'>
             <Routes>
