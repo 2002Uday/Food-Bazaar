@@ -6,8 +6,8 @@ import {
   MdCloudUpload,
   MdDelete,
   MdFoodBank,
-  MdAttachMoney,
 } from "react-icons/md";
+import { TbCurrencyRupee } from "react-icons/tb";
 import { categories } from "../utils/data";
 import Loader from "./Loader";
 import {
@@ -257,7 +257,7 @@ const CreateContainer = () => {
           </div>
 
           <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <MdAttachMoney className="text-gray-700 text-2xl" />
+            <TbCurrencyRupee className="text-gray-700 text-2xl" />
             <input
               type="text"
               required
