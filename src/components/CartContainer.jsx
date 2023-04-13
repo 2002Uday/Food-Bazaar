@@ -115,7 +115,7 @@ const CartContainer = () => {
 
             {user ? (
               <motion.button
-                whileTap={{ scale: 0.8 }}
+                whileTap={{ scale: 0.9 }}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr  from-purple-400 to-purple-600 text-gray-50 text-lg my-2 hover:shadow-lg"
               >
@@ -125,7 +125,7 @@ const CartContainer = () => {
               </motion.button>
             ) : (
               <motion.button
-                whileTap={{ scale: 0.8 }}
+                whileTap={{ scale: 0.9 }}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 text-gray-50 text-lg my-2 hover:shadow-lg"
                 onClick={login}
