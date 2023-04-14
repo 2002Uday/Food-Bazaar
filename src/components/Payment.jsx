@@ -84,7 +84,7 @@ const Payment = () => {
                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                 />
                 <label htmlFor="push-everything" className="block text-lg font-medium leading-6 text-gray-900">
-                Cradit Card
+                Credit Card
                 </label>
             </div>
             <div className="flex items-center gap-x-3 pt-10">
@@ -95,7 +95,7 @@ const Payment = () => {
                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                 />
                 <label htmlFor="push-everything" className="block text-lg font-medium leading-6 text-gray-900">
-                Dabit Card
+                Debit Card
                 </label>
             </div>
             </div>

@@ -81,11 +81,19 @@ const Header = () => {
                 </div>
             </div>
             <div className=' relative'>
-                <motion.img whileTap={{scale: 0.7}}
+                {/* <motion.img whileTap={{scale: 0.7}}
                 src={user ? user.photoURL : Avatar} 
                 className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full" alt="Userprofile" 
                 onClick={login}
-                />
+                /> */}
+                {user ? 
+                <motion.img whileTap={{scale: 0.7}}
+                src={user.photoURL} 
+                className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full" alt="Userprofile" 
+                onClick={login}
+                /> : 
+                <motion.button className='drop-shadow-xl bg-purple-500 text-white border-2 border-purple-600 font-bold py-2 px-4 rounded-lg' whileTap={{scale: 0.7}} onClick={login}>Login</motion.button>
+                }
                 {
                     isMenu && (
                         <motion.div initial={{opacity: 0, scale: 0.6}} animate={{opacity: 1, scale: 1}} exit={{opacity: 0, scale: 0.6}} className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-11 right-0'>
@@ -131,11 +139,14 @@ const Header = () => {
             </Link>
 
             <div className=' relative'>
+            {user ? 
                 <motion.img whileTap={{scale: 0.7}}
-                src={user ? user.photoURL : Avatar} 
-                className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full" alt="Userprofile" 
+                src={user.photoURL} 
+                className="w-10 min-w-[30px] h-10 min-h-[30px] drop-shadow-xl cursor-pointer rounded-full" alt="Userprofile" 
                 onClick={login}
-                />
+                /> : 
+                <motion.button className='drop-shadow-xl bg-purple-500 text-white border-2 border-purple-600 font-bold py-2 px-4 rounded-lg' whileTap={{scale: 0.7}} onClick={login}>Login</motion.button>
+                }
                 {
                     isMenu && (
                         <motion.div initial={{opacity: 0, scale: 0.6}} animate={{opacity: 1, scale: 1}} exit={{opacity: 0, scale: 0.6}} className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-11 right-0'>
