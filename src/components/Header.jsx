@@ -92,7 +92,7 @@ const Header = () => {
                 className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full" alt="Userprofile" 
                 onClick={login}
                 /> : 
-                <motion.button className='drop-shadow-xl bg-purple-500 text-white border-2 border-purple-600 font-bold py-2 px-4 rounded-lg' whileTap={{scale: 0.7}} onClick={login}>Login</motion.button>
+                <motion.button className='drop-shadow-xl bg-purple-500 text-white font-bold py-2 px-4 rounded-lg' whileTap={{scale: 0.7}} onClick={login}>Login</motion.button>
                 }
                 {
                     isMenu && (
